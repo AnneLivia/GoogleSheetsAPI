@@ -1,0 +1,16 @@
+{
+  "name": "nodesheets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Anne Livia",
+  "license": "MIT",
+  "dependencies": {
+    "google-spreadsheet": "^3.3.0"
+  }
+}
