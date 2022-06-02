@@ -8,6 +8,7 @@ const controller = new Controller();
 router.get('/metadata', controller.metadata);
 router.get('/rows/:pageTitle', controller.getRows);
 router.post('/rows/:pageTitle', controller.addOneRow);
+router.delete('/rows/:pageTitle/:from/:to', controller.deleteRow);
 router.put('/rows/:pageTitle/:from/:to', controller.updateRow);
 
 export default router;

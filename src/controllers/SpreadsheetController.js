@@ -112,7 +112,21 @@ class Controller {
 
   // need to implement
   async deleteRow (req, res, next) {
-    
+    const { pageTitle, from, to } = req.params;
+    try {
+      const {auth, sheet_id, googleSheets} = await getAuthSheets();
+
+      const deleteRow = await googleSheets.spreadsheets.values.clear({
+        auth,
+        spreadsheetId: sheet_id,
+        range: `${pageTitle}!${from}:${to}`,
+      });
+
+      res.json(deleteRow.data);
+    } catch (err) {
+      console.error(err.message);
+      next(new BadRequest('Unexpected error'));
+    }
   }
 
 }
