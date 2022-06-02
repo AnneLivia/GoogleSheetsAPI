@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import credentials from './configs/spreadsheet.js';
 
-const id = "1yt5AP6_wbBKEc868iQtJRC3zxB4b8gHRpiON8eendn8";
+const id = process.env.SPREADSHEET_ID;
 
 const doc = new GoogleSpreadsheet(id);
 
